@@ -1,0 +1,6 @@
+# Large source dumps — too big for GitHub (and not needed in the remote)
+*.dta
+*.rds
+
+.DS_Store
+*.log
