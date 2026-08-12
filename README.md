@@ -22,6 +22,23 @@ Load the headerless matrix with its key and input grouping, for example:
 - `data/seer_pc_5yr_key.txt`
 - `data/seer_pc_5yr_inputs.txt`
 
+## How runs are recorded
+
+Every modeling run leaves two paired records, so a reader can reconstruct it
+without asking us anything:
+
+1. **A run directory**, `runs/YYYYMMDDHHMM/`, named for the minute the run
+   started (`date +%Y%m%d%H%M`). Neuron's output for that run — logs, weight
+   sets, session and exported model files — goes there and nowhere else. One
+   directory per run; stamps are never reused. These artifacts are committed:
+   the log is the primary evidence for the run.
+
+2. **A `lab_notebook.md` entry** bearing the same stamp, recording the exact
+   command line, data files, seed, architecture, training parameters, results,
+   and conclusion. The notebook is append-only — entries are never rewritten,
+   and runs that fail or are abandoned are written up alongside the ones that
+   work.
+
 ## What’s in the repo
 
 | Path | Role |

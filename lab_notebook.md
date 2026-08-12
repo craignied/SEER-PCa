@@ -36,3 +36,22 @@ No neuron run was performed, so there is no `runs/202608121413/` directory.
 Carried forward: the stray `neuron.log` at the project root predates this
 convention and its originating run is not identified in any notebook entry. It
 was left in place rather than filed under a guessed timestamp.
+
+---
+
+## 2026-08-12 14:17 CDT — 202608121417 — Deleted the pre-convention root log (no run)
+
+Supersedes the "carried forward" note in the entry above: the stray root
+`neuron.log` was deleted rather than kept. It documented a run made before this
+notebook existed, so it had no matching entry and no identified stamp, seed, or
+parameters — it could not have been tied to a reproducible run. Nothing was
+tracked in git, so the deletion changes no committed history.
+
+From here on, neuron logs are written into `runs/YYYYMMDDHHMM/` and committed.
+A log at the project root means a run was misconfigured and its output was not
+directed at a run directory.
+
+Also expanded `README.md` with a "How runs are recorded" section stating the
+run-directory and notebook pairing for outside readers.
+
+No neuron run was performed, so there is no `runs/202608121417/` directory.
