@@ -4,3 +4,7 @@
 
 .DS_Store
 *.log
+
+# Run artifacts under runs/ ARE tracked — they are the record of each modeling
+# run. Re-admit them past the *.log rule above.
+!runs/**/*.log
