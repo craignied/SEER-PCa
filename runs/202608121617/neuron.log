@@ -1,0 +1,131 @@
+I've loaded a Matrix into a raw dataset.
+
+The Matrix was loaded from file seer_pc_5yr_dev_sample_40000.txt.
+
+I've randomized a raw dataset into training and test sets.
+The raw dataset had 40000 exemplars.
+   The number of 0s in the raw dataset was 38796.
+   The frequency of 0s in the raw dataset was 0.9699.
+   The number of 1s in the raw dataset was 1204.
+   The frequency of 1s in the raw dataset was 0.0301.
+The training set has 40000 exemplars.
+   The number of 0s in the training set is 38796.
+   The frequency of 0s in the training set is 0.9699.
+   The number of 1s in the training set is 1204.
+   The frequency of 1s in the training set is 0.0301.
+The test set has 0 exemplars.
+   The number of 0s in the test set is 0.
+   The frequency of 0s in the test set is 0.
+   The number of 1s in the test set is 0.
+   The frequency of 1s in the test set is 0.
+
+
+I've randomized the weights of a Binary logistic object.
+
+I'm running an iterative model:
+Binary logistic
+22 inputs
+1 output by definition
+Number of exemplars in training set: 40000
+Training algorithm is canonical backpropagation
+Training is off-line (batch/epoch is on)
+Automatic stepsize selection is on
+Weight decay is off
+Error checking routines in effect:
+Maximum number of iterations: 20000
+Stop if maximum absolute gradient decreases below 1e-06
+Stop if the error plateaus over a window of 100 iterations
+
+    Iteration: X-entropy error:  Max abs grad:  CA Train %
+             1     1.296408e-01   2.171393e-02        97.0
+             2     1.282155e-01   2.181275e-02        97.0
+             3     1.265106e-01   2.187195e-02        97.0
+             4     1.248883e-01   2.185601e-02        97.0
+             5     1.233416e-01   2.177202e-02        97.0
+             6     1.218647e-01   2.162738e-02        97.0
+             7     1.204534e-01   2.142943e-02        97.0
+             8     1.191041e-01   2.118518e-02        97.0
+             9     1.178142e-01   2.090115e-02        97.0
+            10     1.165812e-01   2.058332e-02        97.0
+            20     1.069792e-01   1.648208e-02        97.0
+            30     1.011482e-01   1.234111e-02        97.1
+            40     9.760480e-02   9.557165e-03        97.1
+            50     9.535979e-02   8.105341e-03        97.2
+            60     9.385699e-02   6.868997e-03        97.2
+            70     9.279702e-02   5.835195e-03        97.2
+            80     9.201567e-02   4.972763e-03        97.3
+            90     9.141891e-02   4.250464e-03        97.3
+           100     9.095011e-02   3.641880e-03        97.3
+           200     8.898808e-02   1.547884e-03        97.4
+           300     8.837783e-02   1.228614e-03        97.4
+           400     8.804643e-02   1.019110e-03        97.4
+           500     8.792106e-02   9.307893e-04        97.4
+           600     8.781988e-02   8.552742e-04        97.4
+           700     8.773431e-02   7.879947e-04        97.4
+           800     8.766110e-02   7.275316e-04        97.4
+           900     8.759789e-02   6.728203e-04        97.4
+          1000     8.754292e-02   6.230420e-04        97.4
+          2000     8.724578e-02   3.254110e-04        97.4
+The error plateaued over a window of 100 iterations.
+
+Total iterations = 2722
+That took 0000:00:24
+
+Final X-entropy error in the training set = 8.716292e-02.
+Log likelihood = -3.486517e+03
+
+Training set:
+-------------
+Classification accuracy: 97.4%
+Sensitivity: 30.1%
+Specificity: 99.5%
+Predictive value positive: 63.8%
+Predictive value negative: 97.9%
+Classification table for training set:
+----------------------------------
+         Predicted T   Predicted F
+         -----------   -----------
+Known T:         363           841
+Known F:         206         38590
+----------------------------------
+By statistical method, ROC area = 0.901100
+95% CI = 0.890665 - 0.910609 (SE = 0.005151, 2000 bootstrap resamples)
+Chi-squared = 80780.811824
+p = 0.000000e+00 (closer to 1 is better)
+Operating points fitted = 39938
+By trapezoidal method, ROC area = 0.902164
+95% CI = 0.890573 - 0.913755 (SE = 0.005914, Hanley-McNeil)
+Kolmogorov-Smirnov goodness of fit D = 0.657754, p = 0
+Pearson X2 = 33559.8 (n = 40000; no valid p at the individual level - see Hosmer-Lemeshow)
+Hosmer-Lemeshow goodness of fit p = 0.00461847
+
+   Input:       Beta weight:     Std Err:    Wald p(W!=0):
+-----------    -------------   ------------  -------------
+          0          1.15973       0.143640        6.7e-16
+          1          1.66920       0.143335            0.0
+          2         0.452935      0.0652468        3.9e-12
+          3          1.19564      0.0637219            0.0
+          4         0.995638        344063.            1.0
+          5       -0.0954923      0.0442340          0.031
+          6       0.00588951      0.0623722           0.92
+          7         0.402510      0.0933369        1.6e-05
+          8         0.387521      0.0702390        3.4e-08
+          9          1.42750      0.0548604            0.0
+         10       -0.0138741      0.0586991           0.81
+         11        0.0452921      0.0737949           0.54
+         12        0.0721371      0.0893253           0.42
+         13         0.276399      0.0600408        4.2e-06
+         14         0.205243      0.0667582         0.0021
+         15         0.238242      0.0682241        0.00048
+         16        -0.132821      0.0511068         0.0094
+         17        -0.101611      0.0582509          0.081
+         18         0.597936       0.330054          0.070
+         19       -0.0120840       0.196933           0.95
+         20        -0.311237       0.161208          0.054
+         21         0.105133       0.175884           0.55
+y-intercept        -0.378584        309656.            1.0
+
+Information matrix maximum eigenvalue = 6.6e+03
+                    minimum eigenvalue = 4.7e-12
+Condition number = 1.4e+15
+

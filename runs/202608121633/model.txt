@@ -1,0 +1,108 @@
+I'm running an iterative model:
+Binary logistic
+22 inputs
+1 output by definition
+Number of exemplars in training set: 40000
+Training algorithm is canonical backpropagation
+Training is off-line (batch/epoch is on)
+Automatic stepsize selection is on
+Weight decay is off
+Error checking routines in effect:
+Maximum number of iterations: 20000
+Stop if maximum absolute gradient decreases below 0.0001
+
+    Iteration: X-entropy error:  Max abs grad:  CA Train %
+             1     1.296408e-01   2.171393e-02        97.0
+             2     1.282155e-01   2.181275e-02        97.0
+             3     1.265106e-01   2.187195e-02        97.0
+             4     1.248883e-01   2.185601e-02        97.0
+             5     1.233416e-01   2.177202e-02        97.0
+             6     1.218647e-01   2.162738e-02        97.0
+             7     1.204534e-01   2.142943e-02        97.0
+             8     1.191041e-01   2.118518e-02        97.0
+             9     1.178142e-01   2.090115e-02        97.0
+            10     1.165812e-01   2.058332e-02        97.0
+            20     1.069792e-01   1.648208e-02        97.0
+            30     1.011482e-01   1.234111e-02        97.1
+            40     9.760480e-02   9.557165e-03        97.1
+            50     9.535979e-02   8.105341e-03        97.2
+            60     9.385699e-02   6.868997e-03        97.2
+            70     9.279702e-02   5.835195e-03        97.2
+            80     9.201567e-02   4.972763e-03        97.3
+            90     9.141891e-02   4.250464e-03        97.3
+           100     9.095011e-02   3.641880e-03        97.3
+           200     8.898808e-02   1.547884e-03        97.4
+           300     8.837783e-02   1.228614e-03        97.4
+           400     8.804643e-02   1.019110e-03        97.4
+           500     8.792106e-02   9.307893e-04        97.4
+           600     8.781988e-02   8.552742e-04        97.4
+           700     8.773431e-02   7.879947e-04        97.4
+           800     8.766110e-02   7.275316e-04        97.4
+           900     8.759789e-02   6.728203e-04        97.4
+          1000     8.754292e-02   6.230420e-04        97.4
+          2000     8.724578e-02   3.254110e-04        97.4
+          3000     8.714362e-02   1.941841e-04        97.4
+          4000     8.710271e-02   1.222208e-04        97.4
+The maximum absolute gradient became lower than 1.0e-04.
+
+Total iterations = 4461
+That took 0000:00:40
+
+Final X-entropy error in the training set = 8.709246e-02.
+Log likelihood = -3.483698e+03
+
+Training set:
+-------------
+Classification accuracy: 97.4%
+Sensitivity: 29.7%
+Specificity: 99.5%
+Predictive value positive: 63.7%
+Predictive value negative: 97.9%
+Classification table for training set:
+----------------------------------
+         Predicted T   Predicted F
+         -----------   -----------
+Known T:         358           846
+Known F:         204         38592
+----------------------------------
+By statistical method, ROC area = 0.901577
+95% CI = 0.891189 - 0.911171 (SE = 0.005132, 2000 bootstrap resamples)
+Chi-squared = 84774.662276
+p = 0.000000e+00 (closer to 1 is better)
+Operating points fitted = 39936
+By trapezoidal method, ROC area = 0.902666
+95% CI = 0.891100 - 0.914232 (SE = 0.005901, Hanley-McNeil)
+Kolmogorov-Smirnov goodness of fit D = 0.657397, p = 0
+Pearson X2 = 33975.7 (n = 40000; no valid p at the individual level - see Hosmer-Lemeshow)
+Hosmer-Lemeshow goodness of fit p = 0.00372076
+
+   Input:       Beta weight:     Std Err:    Wald p(W!=0):
+-----------    -------------   ------------  -------------
+          0          1.24891       0.143875            0.0
+          1          1.80421       0.143457            0.0
+          2         0.439472      0.0652318        1.6e-11
+          3          1.17668      0.0636400            0.0
+          4          1.10414        372975.            1.0
+          5       -0.0983246      0.0442488          0.026
+          6       0.00291736      0.0625741           0.96
+          7         0.374806      0.0936284        6.3e-05
+          8         0.384838      0.0704399        4.7e-08
+          9          1.40580      0.0548612            0.0
+         10       -0.0190965      0.0589236           0.75
+         11        0.0255215      0.0743585           0.73
+         12        0.0368734      0.0906445           0.68
+         13         0.263583      0.0603230        1.2e-05
+         14         0.191749      0.0672089         0.0043
+         15         0.204575      0.0687621         0.0029
+         16        -0.143657      0.0512976         0.0051
+         17       -0.0986858      0.0583595          0.091
+         18         0.558029       0.330764          0.092
+         19       -0.0121496       0.196949           0.95
+         20        -0.313714       0.161509          0.052
+         21         0.127513       0.176100           0.47
+y-intercept        -0.499146        335677.            1.0
+
+Information matrix maximum eigenvalue = 6.6e+03
+                    minimum eigenvalue = 3.9e-12
+Condition number = 1.7e+15
+

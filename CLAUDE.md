@@ -11,6 +11,38 @@ The neural computational code lives in:
 Run models and scripted sessions from there against the dataset files in
 `data/` (for example `data/seer_pc_5yr_data.txt` with its key and inputs files).
 
+## Use neuron first
+
+neuron was developed specifically to support the rigorous modeling and
+evaluation this cohort requires. Before proposing an external script,
+workaround, or new implementation for dataset splitting, grouping,
+cross-validation, model or optimizer selection, locked-test evaluation,
+inference, reporting, or run management, first inspect neuron's current
+documented contract and, when the exact behavior matters, its implementation.
+
+Prefer neuron's existing capability when it fits the scientific question. If
+it does not fit, identify the precise limitation before recommending work
+outside the engine. Do not infer neuron's capabilities from memory: the engine
+changes, and several facilities were built expressly for this SEER work.
+
+## Model variables are not input nodes
+
+The dataset has **14 conceptual predictor variables encoded as 22 input
+nodes**, plus the outcome (15 conceptual variables total). Never describe or
+analyze the 22 encoded nodes as 22 independent variables. In particular,
+regression and variable selection must keep every categorical predictor
+together using the grouping in `data/seer_pc_5yr_inputs.txt`:
+
+```text
+0; 1; 2, 3; 4-7; 8; 9; 10-12; 13-15; 16; 17; 18; 19; 20; 21
+```
+
+These groups are age, PSA, Gleason, T stage, N stage, M stage,
+race/ethnicity, marital status, previous cancer, diagnosis year, poverty,
+income, unemployment, and education. Indicator-level coefficients may explain
+how a fitted categorical variable behaves, but they do not replace the grouped
+test of the conceptual variable.
+
 ## Layout
 
 ```

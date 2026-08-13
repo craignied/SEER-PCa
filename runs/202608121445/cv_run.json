@@ -1,0 +1,23 @@
+{
+  "software": "neuron 3.0.0-dev",
+  "n": 204062,
+  "events": 6085,
+  "k": 5,
+  "foldPlan": "group-disjoint outcome-stratified 5-fold, seed 42 grouped by columns 19, 20, 21, 22 (598 groups) (development rows only)",
+  "foldDesign": { "method": "group-disjoint outcome-stratified", "seed": 42, "k": 5, "strataColumns": [], "strataBins": 0, "strata": 0, "groupColumns": [19, 20, 21, 22], "groups": 598, "developmentOnly": true, "requested": 0, "achieved": 0, "leakage": 0, "imbalance": 0.001, "largestGroup": 7883, "foldRows": [40813, 40813, 40811, 40814, 40811], "foldEvents": [1217, 1217, 1216, 1218, 1217], "foldGroups": [121, 121, 117, 120, 119], "refusal": "", "warnings": [] },
+  "procedures": [
+    { "name": "Logistic", "seconds": 961.881, "validFolds": 5, "pooledAUC": 0.901638, "arch": [], "optimizer": [], "optimizerAuto": [], "failures": [] }
+  ],
+  "lockedTest": {
+    "n": 22617, "events": 620,
+    "splitPlan": "group-disjoint locked holdout, seed 42 grouped by columns 19, 20, 21, 22 (612 groups); 22617 rows achieved of 22668 requested",
+    "samplingUnit": "cluster (declared clustered)",
+    "independenceStatus": "declared: clustered observations",
+    "inferenceMethod": "Obuchowski (clustered ROC covariance)",
+    "inferenceRan": true,
+    "inferenceReason": "",
+    "clusters": 14,
+    "splitDesign": { "method": "group-disjoint outcome-stratified", "seed": 42, "k": 0, "strataColumns": [], "strataBins": 0, "strata": 0, "groupColumns": [19, 20, 21, 22], "groups": 612, "developmentOnly": false, "requested": 22668, "achieved": 22617, "leakage": 0, "imbalance": 0.000, "largestGroup": 0, "foldRows": [], "foldEvents": [], "foldGroups": [], "refusal": "", "warnings": [] },
+    "areas": [{ "name": "Logistic", "auc": 0.880071, "lo": 0.866083, "hi": 0.894059, "note": "" }]
+  }
+}

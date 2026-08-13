@@ -1,0 +1,166 @@
+I've loaded a Matrix into a raw dataset.
+
+The Matrix was loaded from file seer_pc_5yr_dev_sample_40000.txt.
+
+I've randomized a raw dataset into training and test sets.
+The raw dataset had 40000 exemplars.
+   The number of 0s in the raw dataset was 38796.
+   The frequency of 0s in the raw dataset was 0.9699.
+   The number of 1s in the raw dataset was 1204.
+   The frequency of 1s in the raw dataset was 0.0301.
+The training set has 40000 exemplars.
+   The number of 0s in the training set is 38796.
+   The frequency of 0s in the training set is 0.9699.
+   The number of 1s in the training set is 1204.
+   The frequency of 1s in the training set is 0.0301.
+The test set has 0 exemplars.
+   The number of 0s in the test set is 0.
+   The frequency of 0s in the test set is 0.
+   The number of 1s in the test set is 0.
+   The frequency of 1s in the test set is 0.
+
+
+I've randomized the weights of a Binary logistic object.
+
+I'm running an iterative model:
+Binary logistic
+22 inputs
+1 output by definition
+Number of exemplars in training set: 40000
+Training algorithm is canonical backpropagation
+Training is off-line (batch/epoch is on)
+Automatic stepsize selection is on
+Weight decay is off
+Error checking routines in effect:
+Maximum number of iterations: 20000
+Stop if maximum absolute gradient decreases below 1e-06
+
+    Iteration: X-entropy error:  Max abs grad:  CA Train %
+             1     1.296408e-01   2.171393e-02        97.0
+             2     1.282155e-01   2.181275e-02        97.0
+             3     1.265106e-01   2.187195e-02        97.0
+             4     1.248883e-01   2.185601e-02        97.0
+             5     1.233416e-01   2.177202e-02        97.0
+             6     1.218647e-01   2.162738e-02        97.0
+             7     1.204534e-01   2.142943e-02        97.0
+             8     1.191041e-01   2.118518e-02        97.0
+             9     1.178142e-01   2.090115e-02        97.0
+            10     1.165812e-01   2.058332e-02        97.0
+            20     1.069792e-01   1.648208e-02        97.0
+            30     1.011482e-01   1.234111e-02        97.1
+            40     9.760480e-02   9.557165e-03        97.1
+            50     9.535979e-02   8.105341e-03        97.2
+            60     9.385699e-02   6.868997e-03        97.2
+            70     9.279702e-02   5.835195e-03        97.2
+            80     9.201567e-02   4.972763e-03        97.3
+            90     9.141891e-02   4.250464e-03        97.3
+           100     9.095011e-02   3.641880e-03        97.3
+           200     8.898808e-02   1.547884e-03        97.4
+           300     8.837783e-02   1.228614e-03        97.4
+           400     8.804643e-02   1.019110e-03        97.4
+           500     8.792106e-02   9.307893e-04        97.4
+           600     8.781988e-02   8.552742e-04        97.4
+           700     8.773431e-02   7.879947e-04        97.4
+           800     8.766110e-02   7.275316e-04        97.4
+           900     8.759789e-02   6.728203e-04        97.4
+          1000     8.754292e-02   6.230420e-04        97.4
+          2000     8.724578e-02   3.254110e-04        97.4
+          3000     8.714362e-02   1.941841e-04        97.4
+          4000     8.710271e-02   1.222208e-04        97.4
+          5000     8.708413e-02   8.375288e-05        97.4
+          6000     8.707458e-02   6.114932e-05        97.4
+          7000     8.706904e-02   4.849451e-05        97.4
+          8000     8.706546e-02   4.662418e-05        97.4
+          9000     8.706293e-02   4.428347e-05        97.4
+         10000     8.706103e-02   4.170032e-05        97.4
+         20000     8.705370e-02   1.922899e-05        97.3
+
+Total iterations = 20001
+That took 0000:03:17
+
+WARNING: training did NOT converge. It stopped at the maximum of 20000 iterations, which is a safety limit, not a stopping condition.
+         The weights are kept, so training can be continued from here, but this is not a fitted model:
+         raise the maximum iterations, or set a stopping condition that can fire.
+
+Final X-entropy error in the training set = 8.705370e-02.
+Log likelihood = -3.482148e+03
+
+Training set:
+-------------
+Classification accuracy: 97.3%
+Sensitivity: 28.8%
+Specificity: 99.5%
+Predictive value positive: 62.9%
+Predictive value negative: 97.8%
+Classification table for training set:
+----------------------------------
+         Predicted T   Predicted F
+         -----------   -----------
+Known T:         347           857
+Known F:         205         38591
+----------------------------------
+By statistical method, ROC area = 0.901668
+95% CI = 0.891215 - 0.911261 (SE = 0.005132, 2000 bootstrap resamples)
+Chi-squared = 86433.450943
+p = 0.000000e+00 (closer to 1 is better)
+Operating points fitted = 39931
+By trapezoidal method, ROC area = 0.902768
+95% CI = 0.891207 - 0.914329 (SE = 0.005898, Hanley-McNeil)
+Kolmogorov-Smirnov goodness of fit D = 0.657345, p = 0
+Pearson X2 = 34315.9 (n = 40000; no valid p at the individual level - see Hosmer-Lemeshow)
+Hosmer-Lemeshow goodness of fit p = 0.00381032
+
+   Input:       Beta weight:     Std Err:    Wald p(W!=0):
+-----------    -------------   ------------  -------------
+          0          1.27063       0.143937            0.0
+          1          1.93784       0.143617            0.0
+          2         0.428683      0.0652264        5.0e-11
+          3          1.16431      0.0635715            0.0
+          4          1.27267          Error          Error
+          5        -0.106973      0.0442585          0.016
+          6       -0.0107760      0.0627751           0.86
+          7         0.337868      0.0939178        0.00032
+          8         0.375947      0.0706489        1.0e-07
+          9          1.38556      0.0548616            0.0
+         10       -0.0209966      0.0591202           0.72
+         11       0.00134115      0.0750895           0.99
+         12      -0.00462959      0.0924725           0.96
+         13         0.247203      0.0606588        4.6e-05
+         14         0.171594      0.0677726          0.011
+         15         0.177025      0.0692954          0.011
+         16        -0.154113      0.0515180         0.0028
+         17       -0.0979491      0.0584614          0.094
+         18         0.273505       0.332517           0.41
+         19        -0.136851       0.196969           0.49
+         20        -0.256828       0.161867           0.11
+         21         0.184319       0.176239           0.30
+y-intercept        -0.686398          Error          Error
+
+Information matrix maximum eigenvalue = 6572.60
+                    minimum eigenvalue = 2.96074e-12
+Condition number = 2.21992e+15
+
+
+Reverse regressing a Binary logistic Network:
+Variable structure:
+variable 0 is represented by input node(s) 0 
+variable 1 is represented by input node(s) 1 
+variable 2 is represented by input node(s) 2 3 
+variable 3 is represented by input node(s) 4 5 6 7 
+variable 4 is represented by input node(s) 8 
+variable 5 is represented by input node(s) 9 
+variable 6 is represented by input node(s) 10 11 12 
+variable 7 is represented by input node(s) 13 14 15 
+variable 8 is represented by input node(s) 16 
+variable 9 is represented by input node(s) 17 
+variable 10 is represented by input node(s) 18 
+variable 11 is represented by input node(s) 19 
+variable 12 is represented by input node(s) 20 
+variable 13 is represented by input node(s) 21 
+
+Removing variable(s) 0  = node(s) 0 :
+
+STOPPING: the fit for variable 0 = node(s) 0  is not a finished fit.
+It ended as 'max_iterations' after 20001 iterations, which is not a stopping condition.
+No chi-square or p-value is calculated for it, and no variable is selected from an incomplete pass.
+Raise the maximum iterations, or set a stopping condition that can fire, then run the regression again.

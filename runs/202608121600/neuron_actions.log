@@ -1,0 +1,2 @@
+2026-08-12T16:00:39 load discrete=1 fraction=0 inputs=22 mode=raw outputs=1 path=seer_pc_5yr_dev_sample_40000.txt seed=42
+2026-08-12T16:00:39 cv algorithm=auto autostop_tol=0.0001 autostop_window=100 folds=5 group=19,20,21,22 hidden_max=8 inner_val=0.25 iter_budget=4000 ldfa=0 logistic=1 maxiter=20000 neural=1 neural_obd=1 qdfa=0 seed=42

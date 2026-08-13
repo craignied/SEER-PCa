@@ -1,0 +1,21 @@
+I've loaded a Matrix into a raw dataset.
+
+The Matrix was loaded from file seer_pc_5yr_dev_sample_10000.txt.
+
+I've randomized a raw dataset into training and test sets.
+The raw dataset had 10000 exemplars.
+   The number of 0s in the raw dataset was 9699.
+   The frequency of 0s in the raw dataset was 0.9699.
+   The number of 1s in the raw dataset was 301.
+   The frequency of 1s in the raw dataset was 0.0301.
+The training set has 10000 exemplars.
+   The number of 0s in the training set is 9699.
+   The frequency of 0s in the training set is 0.9699.
+   The number of 1s in the training set is 301.
+   The frequency of 1s in the training set is 0.0301.
+The test set has 0 exemplars.
+   The number of 0s in the test set is 0.
+   The frequency of 0s in the test set is 0.
+   The number of 1s in the test set is 0.
+   The frequency of 1s in the test set is 0.
+
