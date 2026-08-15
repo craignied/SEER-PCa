@@ -443,6 +443,50 @@ The principal ranges remain:
 - Unemployment: 1.92%–21.21%
 - Less than high-school education: 2.04%–38.08%
 
+## Modeling-cohort refinement: T0 exclusion
+
+The source cohort contains two patients coded AJCC T0 (no evidence of a
+primary tumor). Neither had a recorded prostate-cancer death within five
+years. T0 is biologically distinct from T1 and therefore must not be merged
+into the T1 reference category. At the same time, two observations cannot
+support estimation of a separate T0 effect; the T0 indicator was identically
+zero in the 40,000-patient regression sample and made its encoded information
+matrix singular.
+
+The analysis cohort will therefore be restricted to patients with an
+identified primary prostate tumor, AJCC T1–T4. The two T0 records will be
+excluded on the basis of their staging category, not their observed outcomes.
+All previously frozen development/test assignments for the remaining patients
+will be preserved; the split will not be redrawn after this exclusion. The
+cohort build, independent audit, and reported partition counts must be updated
+before the next model fit.
+
+## Development and locked-test construction for reporting
+
+The evaluation unit is county rather than patient. Counties were kept intact
+so that no county contributed patients to both model development and the
+locked test. Neuron generated candidate county-disjoint allocations with seed
+42 while balancing sample size and outcome prevalence. A 10% candidate
+produced a geographically concentrated test dominated by Los Angeles County,
+so a 20% candidate was examined and accepted because it provided broader
+geographic coverage while retaining a large development cohort.
+
+Before the T0 refinement, the accepted allocation contained 181,440 patients
+from 544 counties in development and 45,239 patients from 68 counties in the
+locked test. The primary estimand is patient-weighted discrimination among
+eligible patients from counties absent during model development. Within the
+development partition, model selection used county-disjoint cross-validation;
+the locked patients were excluded from neural architecture, optimizer,
+stopping-rule, and sample-size decisions.
+
+The locked allocation was not completely untouched: logistic performance on
+the 10% and 20% candidate allocations was inspected before the 20% allocation
+was accepted. The final test should therefore be described as held out from
+neural-network development, with this prior logistic inspection disclosed,
+rather than as a pristine fully prespecified confirmatory test. Row identities
+for the accepted allocation are recorded in
+`runs/202608121513/cv_locked_predictions.csv`.
+
 ## Planned analyses and sensitivity checks
 
 Before results are used in a talk or manuscript, consider:

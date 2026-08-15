@@ -1112,3 +1112,53 @@ intervals are exploratory and should be confirmed in a stable refitted model.
 
 No neuron run was performed for this summary, so there is no
 `runs/202608121655/` directory.
+
+---
+
+## 2026-08-14 06:23 CDT — 202608140623 — T0 cohort decision and split-reporting clarification (no run)
+
+Reviewed the severe ill-conditioning in the 40,000-patient full logistic fit
+from run `202608121633`. A direct count established the structural cause of
+the unstable T0 coefficient:
+
+| Dataset | Total patients | T0 patients | T0 five-year PC deaths |
+|---|---:|---:|---:|
+| Full modeling matrix | 226,679 | 2 | 0 |
+| 40,000-patient development sample | 40,000 | 0 | 0 |
+
+Because the T0 input was identically zero in the fitted sample, its coefficient
+was unidentified. This explains the T0 standard error of approximately
+`372,975` and contributes directly to the reported information-matrix
+condition number of `1.7e15`. T0 means no evidence of a primary tumor; it is
+biologically distinct from T1 and will not be merged with the T1 reference
+category.
+
+Decision: restrict the modeling cohort to patients with an identified primary
+prostate tumor, AJCC T1–T4, and exclude the two T0 patients. This is a
+stage-based eligibility rule, not an outcome-based exclusion; their outcomes
+were inspected to diagnose estimability but are not the selection criterion.
+This decision has been documented in `FIVE_YEAR_PC_MORTALITY_DATASET.md` but
+has not yet been implemented in the cohort files. When implemented, the two
+records will be removed without redrawing the frozen allocation: every
+remaining patient's existing development or locked-test assignment will be
+preserved. The build and independent audit must then be rerun, and the revised
+partition counts recorded before fitting another model.
+
+Also clarified the language required for the eventual report. Neuron created
+seed-42 candidate county-disjoint allocations, keeping each county wholly in
+development or test and balancing patient/event totals. The 10% allocation was
+rejected as too geographically concentrated; the accepted 20% allocation
+contained, before T0 exclusion, 181,440 development patients in 544 counties
+and 45,239 locked-test patients in 68 counties. Development model selection
+used county-disjoint cross-validation, and locked patients were excluded from
+all neural architecture, optimizer, stopping-rule, and sample-size decisions.
+
+The report must also disclose that logistic locked-test performance on both
+candidate allocations was viewed before the 20% allocation was accepted.
+Consequently, the accepted test is held out from neural development but is not
+a completely untouched, fully prespecified confirmatory test. The principal
+estimand remains patient-weighted discrimination in eligible patients from
+counties absent during model development.
+
+No cohort file was changed and no neuron run was performed for this decision,
+so there is no `runs/202608140623/` directory.
