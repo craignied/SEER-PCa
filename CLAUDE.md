@@ -52,6 +52,23 @@ lab_notebook.md        dated, time-stamped narrative of every run
 *.md (top level)       dataset construction and evaluation documentation
 ```
 
+## Current report
+
+`report.md` is the concise clinical report and `output/pdf/report.pdf` is its
+visually verified 2-page PDF. Use Arabic numerals for numbers in this report.
+Treat `lab_notebook.md` as the primary authority for modeling methods and
+results.
+
+The report currently covers cohort construction, the county-disjoint locked
+test, 5-fold development cross-validation, logistic-versus-neural comparison,
+and grouped reverse stepwise regression. The regression table contains
+sequential grouped Wilks p-values obtained at different stages of the stepwise
+path, not estimates from 1 fitted model. The reported marital-status odds
+ratios and CIs came from the full 22-input development-sample model. The
+accepted locked test has not yet been used for the final frozen model
+comparison, and the planned exclusion of the 2 T0 patients has not yet been
+implemented in the cohort files.
+
 ## `data/` — the dataset directory
 
 Every dataset file and every script that produces one lives in `data/`, so the
