@@ -69,6 +69,12 @@ accepted locked test has not yet been used for the final frozen model
 comparison, and the planned exclusion of the 2 T0 patients has not yet been
 implemented in the cohort files.
 
+When explaining the county-disjoint folds, distinguish outcome/sample-size
+balance from geographic overlap: folds were balanced for patient and event
+counts, but each county remained entirely within 1 fold. This evaluates
+performance in counties absent from model training and avoids sharing the same
+county-level socioeconomic information across training and validation.
+
 ## `data/` — the dataset directory
 
 Every dataset file and every script that produces one lives in `data/`, so the

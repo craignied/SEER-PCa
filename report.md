@@ -20,7 +20,7 @@ We included patients whose 5-year outcome could be determined and whose required
 
 To evaluate the models in a setting that differed geographically from the development data, we kept all patients from the same county together. We initially considered holding out 10% of the patients for testing, but that group came from too few counties. We therefore targeted a 20% test set, which provided broader geographic coverage while leaving a large development set. Because counties could not be divided between groups, the final locked test set contained 45,239 patients (19.96%) from 68 counties; the development set contained 181,440 patients from 544 different counties.
 
-Model development used 5-fold cross-validation. Counties, rather than individual patients, were assigned to folds, and the folds were balanced as closely as possible for patient numbers and prostate cancer deaths. This prevented patients from the same county from appearing in both training and validation data. The locked test patients were excluded while the computational model was developed and refined.
+Model development used 5-fold cross-validation. The folds were balanced for patient numbers and prostate cancer deaths, while each county was assigned entirely to 1 fold. This allowed us to evaluate the model in patients from counties not represented in its training data and avoided overly optimistic results from sharing county-level information between training and validation. The locked test patients were excluded while the computational model was developed and refined.
 
 ## Modeling approach
 
